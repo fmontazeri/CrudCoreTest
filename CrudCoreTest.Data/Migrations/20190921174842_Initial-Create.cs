@@ -25,6 +25,20 @@ namespace CrudCoreTest.Data.Migrations
                 {
                     table.PrimaryKey("PK_Customer", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customer_Email",
+                table: "Customer",
+                column: "Email",
+                unique: true,
+                filter: "[Email] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customer_FirstName_LastName_DateOfBirth",
+                table: "Customer",
+                columns: new[] { "FirstName", "LastName", "DateOfBirth" },
+                unique: true,
+                filter: "[FirstName] IS NOT NULL AND [LastName] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

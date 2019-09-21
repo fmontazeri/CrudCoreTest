@@ -45,6 +45,14 @@ namespace CrudCoreTest.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("FirstName", "LastName", "DateOfBirth")
+                        .IsUnique()
+                        .HasFilter("[FirstName] IS NOT NULL AND [LastName] IS NOT NULL");
+
                     b.ToTable("Customer");
                 });
 #pragma warning restore 612, 618

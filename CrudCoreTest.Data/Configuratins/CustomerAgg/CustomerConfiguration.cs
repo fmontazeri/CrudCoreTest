@@ -15,6 +15,14 @@ namespace CrudCoreTest.Data.Configuratins.CustomerAgg
             builder.Property(m => m.PhoneNumber).HasColumnType("varchar").HasMaxLength(11);
             builder.Property(m => m.Email).HasMaxLength(50); ;
             builder.Property(m => m.BankAccountNumber);
+
+            builder
+                .HasIndex(p => p.Email)
+                .IsUnique();
+            builder
+                .HasIndex(p => new { p.FirstName, p.LastName, p.DateOfBirth })
+                .IsUnique();
+
             builder.ToTable("Customer");
         }
     }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudCoreTest.Data.Migrations
 {
     [DbContext(typeof(CutomerDbContext))]
-    [Migration("20190921172700_Initial-Create")]
+    [Migration("20190921174842_Initial-Create")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,14 @@ namespace CrudCoreTest.Data.Migrations
                         .HasMaxLength(11);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("FirstName", "LastName", "DateOfBirth")
+                        .IsUnique()
+                        .HasFilter("[FirstName] IS NOT NULL AND [LastName] IS NOT NULL");
 
                     b.ToTable("Customer");
                 });
