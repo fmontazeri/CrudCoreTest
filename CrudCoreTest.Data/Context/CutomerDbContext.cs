@@ -9,7 +9,7 @@ namespace CrudCoreTest.Data.Context
 {
     public  class CutomerDbContext : DbContext
     {
-        public CutomerDbContext(DbContextOptions options) : base(options)
+        public CutomerDbContext(DbContextOptions<CutomerDbContext> options) : base(options)
         {
         }
 
@@ -21,10 +21,5 @@ namespace CrudCoreTest.Data.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=MONTAZERI-PC\SQLDEV;Initial Catalog=FatemehMontazeriCoreDb;User Id=sa;Password=1404;");
-            base.OnConfiguring(optionsBuilder);
-        }
     }
 }
