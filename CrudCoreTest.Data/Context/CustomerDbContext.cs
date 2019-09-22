@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CrudCoreTest.Data.Context
 {
-    public  class CutomerDbContext : DbContext
+    public  class CustomerDbContext : DbContext
     {
-        public CutomerDbContext(DbContextOptions<CutomerDbContext> options) : base(options)
+        public CustomerDbContext(DbContextOptions<CustomerDbContext> options) : base(options)
         {
         }
 

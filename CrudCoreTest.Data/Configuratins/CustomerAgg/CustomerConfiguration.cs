@@ -9,12 +9,12 @@ namespace CrudCoreTest.Data.Configuratins.CustomerAgg
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasKey(m => m.Id);
-            builder.Property(m => m.FirstName).HasMaxLength(50);
-            builder.Property(m => m.LastName).HasMaxLength(50);
-            builder.Property(m => m.DateOfBirth).HasColumnType("date");
-            builder.Property(m => m.PhoneNumber).HasColumnType("varchar").HasMaxLength(11);
-            builder.Property(m => m.Email).HasMaxLength(50); ;
-            builder.Property(m => m.BankAccountNumber);
+            builder.Property(m => m.FirstName).HasMaxLength(50).IsRequired();
+            builder.Property(m => m.LastName).HasMaxLength(50).IsRequired();
+            builder.Property(m => m.DateOfBirth).HasColumnType("date").IsRequired(); ;
+            builder.Property(m => m.PhoneNumber).HasColumnType("varchar").HasMaxLength(11).IsRequired(); ;
+            builder.Property(m => m.Email).HasMaxLength(50).IsRequired();
+            builder.Property(m => m.BankAccountNumber).IsRequired(); 
 
             builder
                 .HasIndex(p => p.Email)

@@ -1,0 +1,89 @@
+﻿@page
+@model FatemehMontazeriCrudCoreTest.Presentation.Pages.Customer.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">Add a new customer  </h3>
+            </div>
+            <div class="box-body">
+                <form method="post">
+                    <div class="form-horizontal">
+    
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Customer.FirstName" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Customer.FirstName" class="form-control" />
+                                <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Customer.LastName" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Customer.LastName" class="form-control" />
+                                <span asp-validation-for="Customer.LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Customer.DateOfBirth" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Customer.DateOfBirth" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" , data-mask="" />
+                                <span asp-validation-for="Customer.DateOfBirth" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Customer.PhoneNumber" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Customer.PhoneNumber" class="form-control" id="phone" , type="tel" />
+                                <span asp-validation-for="Customer.PhoneNumber" class="text-danger"></span>
+                                <span id="valid-msg" class="hide">✓ Valid</span>
+                                <span id="error-msg" class="hide"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Customer.Email" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Customer.Email" class="form-control" />
+                                <span asp-validation-for="Customer.Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Customer.BankAccountNumber" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Customer.BankAccountNumber" class="form-control" />
+                                <span asp-validation-for="Customer.BankAccountNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-page="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

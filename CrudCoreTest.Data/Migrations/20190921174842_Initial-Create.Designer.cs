@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CrudCoreTest.Data.Migrations
 {
-    [DbContext(typeof(CutomerDbContext))]
+    [DbContext(typeof(CustomerDbContext))]
     [Migration("20190921174842_Initial-Create")]
     partial class InitialCreate
     {

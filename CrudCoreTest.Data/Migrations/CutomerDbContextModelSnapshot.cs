@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CrudCoreTest.Data.Migrations
 {
-    [DbContext(typeof(CutomerDbContext))]
+    [DbContext(typeof(CustomerDbContext))]
     partial class CutomerDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
