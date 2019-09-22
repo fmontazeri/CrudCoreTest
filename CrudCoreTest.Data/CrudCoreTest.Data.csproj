@@ -6,6 +6,12 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\20190921172700_Initial-Create.cs" />
+    <Compile Remove="Migrations\20190922172806_Initial-Create.cs" />
+    <Compile Remove="Migrations\20190922173159_Initial-Create.cs" />
+    <Compile Remove="Migrations\20190922173507_Inia-Create.cs" />
+    <Compile Remove="Migrations\20190922173826_Initil-Create.cs" />
+    <Compile Remove="Migrations\20190922174212_Initial-Create.cs" />
+    <Compile Remove="Migrations\20190922174436_Initial-Creae.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,8 +11,9 @@ namespace CrudCoreTest.Data.Configuratins.CustomerAgg
             builder.HasKey(m => m.Id);
             builder.Property(m => m.FirstName).HasMaxLength(50).IsRequired();
             builder.Property(m => m.LastName).HasMaxLength(50).IsRequired();
-            builder.Property(m => m.DateOfBirth).HasColumnType("date").IsRequired(); ;
-            builder.Property(m => m.PhoneNumber).HasColumnType("varchar").HasMaxLength(11).IsRequired(); ;
+            builder.Property(m => m.DateOfBirth).HasColumnType("date").IsRequired();
+            //builder.Property(m => m.PhoneNumber).HasColumnType("varchar").HasMaxLength(11).IsRequired();
+            builder.Property(m => m.PhoneNumber).HasMaxLength(11).IsRequired();
             builder.Property(m => m.Email).HasMaxLength(50).IsRequired();
             builder.Property(m => m.BankAccountNumber).IsRequired(); 
 
