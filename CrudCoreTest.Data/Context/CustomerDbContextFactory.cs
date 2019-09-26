@@ -12,7 +12,7 @@ namespace CrudCoreTest.Data.Context
         public CustomerDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<CustomerDbContext>();
-            optionsBuilder.UseSqlServer(@"Data Source=MONTAZERI-PC\SQLDEV;Initial Catalog=FatemehMontazeriCoreDb;User Id=sa;Password=1404;");
+            optionsBuilder.UseSqlServer(AppConfig.AppConfiguration.ConnectionString);
 
             return new CustomerDbContext(optionsBuilder.Options);
         }
