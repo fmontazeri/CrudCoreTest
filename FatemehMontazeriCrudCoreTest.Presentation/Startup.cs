@@ -35,7 +35,7 @@ namespace FatemehMontazeriCrudCoreTest.Presentation
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<CustomerDbContext>(item => item.UseSqlServer(CrudCoreTest.Data.AppConfig.AppConfiguration.ConnectionString));
+            services.AddDbContext<CustomerDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("CustomerDbContext")));
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

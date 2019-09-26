@@ -9,7 +9,7 @@ namespace CrudCoreTest.Data.Context
 {
     public  class CustomerDbContext : DbContext
     {
-        public CustomerDbContext(DbContextOptions<CustomerDbContext> options) : base(options)
+        public CustomerDbContext(DbContextOptions options) : base(options)
         {
         }
 
