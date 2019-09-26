@@ -13,7 +13,7 @@ namespace FatemehMontazeriCrudCoreTest.Presentation.Models
         [Required]
         public string DateOfBirth { get; set; }
         [Required]
-        [CheckPhoneNumber(AllowRegion = "IR", ErrorMessage = ("Enter your phone number"))]
+        [CheckPhoneNumber(AllowRegion = "IR", ErrorMessage = ("Enter your phone number in correct format"))]
         public string PhoneNumber { get; set; }
         [Required]
         public string Email { get; set; }
